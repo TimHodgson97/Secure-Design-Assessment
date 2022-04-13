@@ -105,7 +105,7 @@ def delete_repair():
 @views.route('/delete-safety', methods=['POST'])
 def delete_safety():
     safety = json.loads(request.data)
-    safetyId = safety['serviceId']
+    safetyId = safety['safetyId']
     safety = Safety.query.get(safetyId)
     if safety:
         if safety.user_id == current_user.id:
