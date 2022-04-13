@@ -18,4 +18,80 @@
         <button type="submit" class="btn btn-primary">Add Opperational Check</button>
       </div>
     </form>
+
+    <h1 align="center">Service Record</h1>
+    <ul class="list-group list-group-flush" id="services">
+      {% for service in user.services %}
+      <li class="list-group-item">
+        {{ service.data }}
+        <button type="button" class="close" onClick="deleteService({{ service.id }})">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </li>
+      {% endfor %}
+    </ul>
+    <form method="POST">
+      <textarea name="service" id="service" class="form-control"></textarea>
+      <br />
+      <div align="center">
+        <button type="submit" class="btn btn-primary">Add Service Record</button>
+      </div>
+    </form>
+
+    <h1 align="center">Software Upgrade</h1>
+    <ul class="list-group list-group-flush" id="upgrades">
+      {% for upgrade in user.upgrades %}
+      <li class="list-group-item">
+        {{ upgrade.data }}
+        <button type="button" class="close" onClick="deleteUpgrade({{ upgrade.id }})">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </li>
+      {% endfor %}
+    </ul>
+    <form method="POST">
+      <textarea name="upgrade" id="upgrade" class="form-control"></textarea>
+      <br />
+      <div align="center">
+        <button type="submit" class="btn btn-primary">Add Software Upgrade</button>
+      </div>
+    </form>
+
+    <h1 align="center">Vessel Repair</h1>
+    <ul class="list-group list-group-flush" id="repairs">
+      {% for repair in user.repairs %}
+      <li class="list-group-item">
+        {{ repair.data }}
+        <button type="button" class="close" onClick="deleteRepair({{ repair.id }})">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </li>
+      {% endfor %}
+    </ul>
+    <form method="POST">
+      <textarea name="repair" id="repair" class="form-control"></textarea>
+      <br />
+      <div align="center">
+        <button type="submit" class="btn btn-primary">Add Vessel Repair</button>
+      </div>
+    </form>
+
+    <h1 align="center">Vessel Safety Inspection</h1>
+    <ul class="list-group list-group-flush" id="safetys">
+      {% for safety in user.safetys %}
+      <li class="list-group-item">
+        {{ safety.data }}
+        <button type="button" class="close" onClick="deleteSafety({{ safety.id }})">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </li>
+      {% endfor %}
+    </ul>
+    <form method="POST">
+      <textarea name="safety" id="safety" class="form-control"></textarea>
+      <br />
+      <div align="center">
+        <button type="submit" class="btn btn-primary">Add Vessel Safety Inspection</button>
+      </div>
+    </form>
     {% endblock %}
