@@ -1,3 +1,4 @@
+//function to delete opperational check note
 function deleteNote(noteId) {
     fetch("/delete-note", {
       method: "POST",
@@ -7,6 +8,7 @@ function deleteNote(noteId) {
     });
   }
 
+//function to delete service record note
 function deleteService(serviceId) {
     fetch("/delete-service", {
       method: "POST",
@@ -16,6 +18,7 @@ function deleteService(serviceId) {
     });
   }
 
+//function to delete software upgrade note
 function deleteUpgrade(upgradeId) {
     fetch("/delete-upgrade", {
       method: "POST",
@@ -25,6 +28,7 @@ function deleteUpgrade(upgradeId) {
     });
 }
 
+//function to delete vessel repair note
 function deleteRepair(repairId) {
     fetch("/delete-repair", {
       method: "POST",
@@ -34,6 +38,7 @@ function deleteRepair(repairId) {
     });
 }
 
+//function to delete safety inspaction note
 function deleteSafety(safetyId) {
     fetch("/delete-safety", {
       method: "POST",

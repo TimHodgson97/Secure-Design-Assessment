@@ -1,10 +1,12 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
     %}
+    <!--input box for Opperational Check List -->
     <h1 align="center">Opperational Check</h1>
     <ul class="list-group list-group-flush" id="notes">
       {% for note in user.notes %}
       <li class="list-group-item">
         {{ note.data }}
+        <!--button to delete note-->
         <button type="button" class="close" onClick="deleteNote({{ note.id }})">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -15,15 +17,18 @@
       <textarea name="note" id="note" class="form-control"></textarea>
       <br />
       <div align="center">
+        <!--button to add note-->
         <button type="submit" class="btn btn-primary">Add Opperational Check</button>
       </div>
     </form>
 
+    <!--input box for Service Record List -->
     <h1 align="center">Service Record</h1>
     <ul class="list-group list-group-flush" id="services">
       {% for service in user.services %}
       <li class="list-group-item">
         {{ service.data }}
+        <!--button to delete note-->
         <button type="button" class="close" onClick="deleteService({{ service.id }})">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -34,15 +39,18 @@
       <textarea name="service" id="service" class="form-control"></textarea>
       <br />
       <div align="center">
+        <!--button to add note-->
         <button type="submit" class="btn btn-primary">Add Service Record</button>
       </div>
     </form>
 
+    <!--input box for Software Upgrade List -->
     <h1 align="center">Software Upgrade</h1>
     <ul class="list-group list-group-flush" id="upgrades">
       {% for upgrade in user.upgrades %}
       <li class="list-group-item">
         {{ upgrade.data }}
+        <!--button to delete note-->
         <button type="button" class="close" onClick="deleteUpgrade({{ upgrade.id }})">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -53,15 +61,18 @@
       <textarea name="upgrade" id="upgrade" class="form-control"></textarea>
       <br />
       <div align="center">
+        <!--button to add note-->
         <button type="submit" class="btn btn-primary">Add Software Upgrade</button>
       </div>
     </form>
 
+    <!--input box for Vessel Repair List -->
     <h1 align="center">Vessel Repair</h1>
     <ul class="list-group list-group-flush" id="repairs">
       {% for repair in user.repairs %}
       <li class="list-group-item">
         {{ repair.data }}
+        <!--button to delete note-->
         <button type="button" class="close" onClick="deleteRepair({{ repair.id }})">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -72,15 +83,18 @@
       <textarea name="repair" id="repair" class="form-control"></textarea>
       <br />
       <div align="center">
+        <!--button to add note-->
         <button type="submit" class="btn btn-primary">Add Vessel Repair</button>
       </div>
     </form>
 
+    <!--input box for Vessel Safety Inspection List -->
     <h1 align="center">Vessel Safety Inspection</h1>
     <ul class="list-group list-group-flush" id="safetys">
       {% for safety in user.safetys %}
       <li class="list-group-item">
         {{ safety.data }}
+        <!--button to delete note-->
         <button type="button" class="close" onClick="deleteSafety({{ safety.id }})">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -91,6 +105,7 @@
       <textarea name="safety" id="safety" class="form-control"></textarea>
       <br />
       <div align="center">
+        <!--button to add note-->
         <button type="submit" class="btn btn-primary">Add Vessel Safety Inspection</button>
       </div>
     </form>

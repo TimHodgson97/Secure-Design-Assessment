@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!--set up header and bootstrap to make things look nice-->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -15,6 +16,7 @@
       crossorigin="anonymous"
     />
 
+    <!--create collapsable nav bar-->
     <title>{% block title %}Home{% endblock %}</title>
   </head>
   <body>
@@ -29,9 +31,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbar">
         <div class="navbar-nav">
+          <!--only display home and logout options if the user is logged in-->
           {% if user.is_authenticated %}
           <a class="nav-item nav-link" id="home" href="/">Home</a>
           <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+          <!--if user is not logged in then display login and sign up options-->
           {% else %}
           <a class="nav-item nav-link" id="login" href="/login">Login</a>
           <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
@@ -40,6 +44,7 @@
       </div>
     </nav>
 
+    <!--set up flash notifications for error and success notifications-->
     {% with messages = get_flashed_messages(with_categories=true) %} {% if
     messages %} {% for category, message in messages %} {% if category ==
     'error' %}
@@ -58,6 +63,7 @@
     </div>
     {% endif %} {% endfor %} {% endif %} {% endwith %}
 
+    <!--set up scripts-->
     <div class="container">{% block content %} {% endblock %}</div>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
